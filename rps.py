@@ -28,7 +28,7 @@ while playagain:
     print("\nYou chose" + str(RPS(player)).replace('RPS.','') + ".")
     print("Phyton chose" + str(RPS(computer)).replace('RPS.','') + ".\n")
    
-    if player == 1 and computer == 3:
+    if player == 1 and computer == 23:
         print("You win! Woop Woop")
     elif player == 2 and computer == 1:
         print("You win! Woop Woop")
