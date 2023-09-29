@@ -48,4 +48,8 @@ while playagain:
         print("Thank you for playing! \n")
         playagain = False
 sys.exit(" System says Goodbye")
+
+# Identation is important for python 
+
+# break can work if you want to end the game for loop
         
