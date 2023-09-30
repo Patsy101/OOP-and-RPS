@@ -1,7 +1,9 @@
 import sys
 import random
 from enum import Enum 
+# global variable
 
+game_count = 0
 
 def play_rps():
     class RPS(Enum):
@@ -24,17 +26,23 @@ def play_rps():
     
     print("\nYou chose" + str(RPS(player)).replace('RPS.','') + ".")
     print("Phyton chose" + str(RPS(computer)).replace('RPS.','') + ".\n")
-
-    if player == 1 and computer == 23:
-        print("You win! Woop Woop")
-    elif player == 2 and computer == 1:
-        print("You win! Woop Woop")
-    elif player == 3 and computer == 2:
-        print("You win! Woop Woop")
-    elif player == computer:
-        print("Tie Game3!")
-    else:
-        print("Phyton wins!")
+    # nested function
+    def decide_winner(player, computer):
+        if player == 1 and computer == 23:
+            return("You win! Woop Woop")
+        elif player == 2 and computer == 1:
+            return("You win! Woop Woop")
+        elif player == 3 and computer == 2:
+            return("You win! Woop Woop")
+        elif player == computer:
+            return("Tie Game3!")
+        else:
+            return("Phyton wins!")
+        
+    game_result = decide_winner (player,computer)
+    global game_count
+    game_count +=1
+    print("\n Game count:" + str(game_count))
         
     print("\n Play again?")
     while True:
