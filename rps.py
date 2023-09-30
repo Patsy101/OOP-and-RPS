@@ -2,23 +2,20 @@ import sys
 import random
 from enum import Enum 
 
-class RPS(Enum):
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
-    
-playagain = True
-while playagain:
-   
 
-
-
+def play_rps():
+    class RPS(Enum):
+        ROCK = 1
+        PAPER = 2
+        SCISSORS = 3
     playerchoice = input("\nEnter... \n1 for Rock,\n2 for paper, or\n3 for Scissors:\n\n")
-
+    if playerchoice not in ["1","2","3"]:
+        print("Ypu must enter 1,2, or 3")
+        # recursion
+        return play_rps()
     player = int(playerchoice)
 
-    if player < 1 or player > 3: 
-        sys.exit("You must enter 1, 2, or 3")
+   
         
     computerchoice = random.choice('123')
 
@@ -27,7 +24,7 @@ while playagain:
     
     print("\nYou chose" + str(RPS(player)).replace('RPS.','') + ".")
     print("Phyton chose" + str(RPS(computer)).replace('RPS.','') + ".\n")
-   
+
     if player == 1 and computer == 23:
         print("You win! Woop Woop")
     elif player == 2 and computer == 1:
@@ -39,15 +36,22 @@ while playagain:
     else:
         print("Phyton wins!")
         
-    playagain = input("\nPlay again? \nY for Yes or \nQ to Quit \n\n")
+    print("\n Play again?")
+    while True:
+        playagain = input("\nY for Yes or \nQ to Quit\n")
+        if playagain.lower() not in ["y","q"]:
+            continue 
+        else:
+            break
     
     if playagain.lower() == "y":
-        continue
+        return play_rps()
     else:
         print("Congratulations")
         print("Thank you for playing! \n")
-        playagain = False
-sys.exit(" System says Goodbye")
+        sys.exit(" System says Goodbye")
+        
+play_rps()
 
 # Identation is important for python 
 
