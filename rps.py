@@ -16,7 +16,7 @@ def rps():
     python_wins = 0
 
     def play_rps():
-        global game_count  # Add this line to indicate that 'game_count' is a global variable
+        global game_count  
         playerchoice = input("\nEnter...\n1 for Rock,\n2 for paper, or\n3 for Scissors:\n\n")
         
         if playerchoice not in ["1", "2", "3"]:
@@ -30,7 +30,7 @@ def rps():
         print("\nYou chose " + str(RPS(player)).replace('RPS.', '') + ".")
         print("Python chose " + str(RPS(computer)).replace('RPS.', '') + ".\n")
         
-        # Define the decide_winner function
+       
         def decide_winner(player, computer):
             nonlocal player_wins
             nonlocal python_wins
