@@ -35,3 +35,5 @@ Jean.getBalance()
 Jean.deposit(500)
 
 Jean.transfer(1000, Patrick)
+
+# this could be used in personal finance 
